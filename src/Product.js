@@ -25,7 +25,7 @@ function Product({id, title, price, rating, image}) {
             },
         })
             
-        toast.success('Item added to the basket')
+        toast.success('Item added to the basket',{autoClose:1500})
     }
 
     return (

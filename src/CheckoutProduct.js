@@ -1,6 +1,10 @@
 import React, { forwardRef } from 'react'
 import './CheckoutProduct.css'
 import { useStateValue } from './StateProvider'
+import 'react-toastify/dist/ReactToastify.css';  
+import {toast} from 'react-toastify';  
+
+toast.configure() 
 
 const CheckoutProduct = forwardRef(
     ({id, title, price, rating, image}, ref) => {
@@ -13,6 +17,8 @@ const CheckoutProduct = forwardRef(
             type : 'REMOVE_FROM_BASKET',
             id : id,
         })
+
+        toast.error('Item removed from the basket',{autoClose:1500})
     }
 
     return (
