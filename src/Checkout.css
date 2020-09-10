@@ -15,3 +15,23 @@
     padding: 10px;
     border-bottom: 1px solid lightgray;
 }
+
+.empty_basket{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    background: -webkit-linear-gradient(left, rgba(92, 7, 52, 1) 0%, rgba(134, 29, 84, 1) 12%, rgba(255, 93, 177, 1) 47%, rgba(83, 0, 30, 1) 100%);
+    
+}
+
+.checkout_empty_image{
+    display: flex;
+    width: 31.948%;
+    flex-direction: column;
+}
+
+.checkout_empty_title{
+    display: flex;
+    margin-top: 35px;
+    margin-left: 50px;
+    padding: 10px;
+}

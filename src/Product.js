@@ -1,6 +1,7 @@
 import React from 'react'
 import './Product.css'
 import { useStateValue } from './StateProvider'
+import { ToastProvider, useToasts } from 'react-toast-notifications'
 
 function Product({id, title, price, rating, image}) {
 
@@ -37,8 +38,9 @@ function Product({id, title, price, rating, image}) {
             </div>
 
             <img src={image} alt=""/>
-
-            <button onClick={addToBasket}>Add to Basket</button>
+            <ToastProvider>
+                <button onClick={addToBasket}>Add to Basket</button>
+            </ToastProvider>
         </div>
     )
 }

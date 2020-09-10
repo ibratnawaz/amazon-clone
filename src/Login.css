@@ -41,6 +41,15 @@
     width: 98%;
 }
 
+#email_message, #password_message{
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 12px;
+    line-height: 15px;
+    color: #c40000;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
 .login_container>p {
     margin-top: 15px;
     font-size: 12px;

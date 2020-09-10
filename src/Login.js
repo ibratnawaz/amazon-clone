@@ -16,7 +16,19 @@ function Login() {
         .then(auth => { 
             history.push('/')
         })
-        .catch(error => alert(error.message))
+        .catch(error => {
+            if(email == '')
+                document.getElementById('email_message').innerHTML=error.message
+                
+            else if(password.length<6)
+                document.getElementById('password_message').innerHTML=error.message
+            
+            else
+            {
+                document.getElementById('email_message').innerHTML=error.message
+                document.getElementById('password_message').innerHTML=''
+            }
+        })
     }
 
     const register = e => {
@@ -27,7 +39,16 @@ function Login() {
                 //it will execute otherwise catch block will execute
                 history.push('/')
             })
-            .catch(error => alert(error.message) )
+            .catch(error => {
+                if(email == '')
+                    document.getElementById('email_message').innerHTML=error.message
+                    
+                else if(password.length<6)
+                    document.getElementById('password_message').innerHTML=error.message
+
+                else
+                    document.getElementById('email_message').innerHTML=error.message
+            } )
     }
     return (
         <div className="login">
@@ -44,10 +65,12 @@ function Login() {
                 <form>
                     <h5>E-mail</h5>
                     <input type='text' value={email} onChange={e => setEmail(e.target.value)} />
+                    <span id="email_message"></span>
 
                     <h5>Password</h5>
                     <input type='password' value={password} onChange={e => setPassword(e.target.value)} />
-                    
+                    <span id="password_message"></span>
+
                     <button type='submit' onClick={signIn} className='login_signInButton'>Sign In</button>
                 </form>
 

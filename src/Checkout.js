@@ -16,8 +16,9 @@ function Checkout() {
                 
                 {basket.length === 0 ? 
                 (
-                    <div>
-                        <h2 className="checkout_title">Your Amazon Basket is empty</h2>
+                    <div className="empty_basket">
+                        <img className="checkout_empty_image" src="https://m.media-amazon.com/images/G/31/cart/empty/kettle-desaturated._CB424694257_.svg" alt=""/>
+                        <h2 className="checkout_empty_title">Your Amazon Basket is empty</h2>
                     </div>
                 ) : (
                     <div>
@@ -36,10 +37,12 @@ function Checkout() {
                 )}
                 
             </div>
-
-            <div className="checkout_right">
-                <Subtotal/>
-            </div>
+            {basket.length !== 0 ? (
+                <div className="checkout_right">
+                    <Subtotal/>
+                </div>
+            ) :''}
+            
         </div>
     )
 }

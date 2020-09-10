@@ -5,7 +5,6 @@ import { useStateValue } from './StateProvider'
 function CheckoutProduct({id, title, price, rating, image}) {
 
     const [{ basket }, dispatch] = useStateValue()
-
     const removeFromBasket=()=>{
 
         //remove item from basket
@@ -16,7 +15,7 @@ function CheckoutProduct({id, title, price, rating, image}) {
     }
 
     return (
-        <div className="checkoutProduct">
+        <div className='checkoutProduct'>
             <img className='checkoutProduct_image' src={image} />
 
             <div className='checkoutProduct_info'>
