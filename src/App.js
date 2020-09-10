@@ -7,7 +7,9 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Login from "./Login";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
-
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
 
 function App() {
 

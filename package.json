@@ -15,7 +15,8 @@
     "react-flip-move": "^3.0.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "react-toast-notifications": "^2.4.0"
+    "react-toast-notifications": "^2.4.0",
+    "react-toastify": "^6.0.8"
   },
   "scripts": {
     "start": "react-scripts start",

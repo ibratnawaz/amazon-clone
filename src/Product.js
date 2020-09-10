@@ -2,7 +2,11 @@ import React from 'react'
 import './Product.css'
 import { useStateValue } from './StateProvider'
 import { ToastProvider, useToasts } from 'react-toast-notifications'
+import 'react-toastify/dist/ReactToastify.css';  
+import {toast} from 'react-toastify';  
 
+toast.configure() 
+  
 function Product({id, title, price, rating, image}) {
 
     const [state, dispatch] = useStateValue()
@@ -20,6 +24,8 @@ function Product({id, title, price, rating, image}) {
                 image:image, 
             },
         })
+            
+        toast.success('Item added to the basket')
     }
 
     return (
@@ -38,9 +44,7 @@ function Product({id, title, price, rating, image}) {
             </div>
 
             <img src={image} alt=""/>
-            <ToastProvider>
-                <button onClick={addToBasket}>Add to Basket</button>
-            </ToastProvider>
+            <button onClick={addToBasket}>Add to Basket</button>
         </div>
     )
 }
