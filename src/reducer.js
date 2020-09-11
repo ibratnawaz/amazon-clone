@@ -4,7 +4,7 @@ export const initialState = {
 }
 
 //selector for iterationg through the Data layer and do the task you want; here finding subtotal of basket.
-export const getBasketTotal = (basket) => basket ?.reduce((amount, item) => item.price + amount, 0)
+export const getBasketTotal = (basket) => basket?.reduce((amount, item) => item.price + amount, 0)
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -13,6 +13,12 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 basket: [...state.basket, action.item],
+            }
+        
+        case "EMPTY_BASKET":
+            return {
+                ...state,
+                basket: [],
             }
         case 'REMOVE_FROM_BASKET':
             // Logic for removing item from cart

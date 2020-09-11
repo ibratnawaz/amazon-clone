@@ -4,6 +4,7 @@ import './Checkout.css'
 import Subtotal from './Subtotal'
 import { useStateValue } from './StateProvider'
 import CheckoutProduct from './CheckoutProduct'
+import { Link } from 'react-router-dom';
 
 function Checkout() {
 
@@ -25,7 +26,12 @@ function Checkout() {
                 (
                     <div className="empty_basket">
                         <img className="checkout_empty_image" src="https://m.media-amazon.com/images/G/31/cart/empty/kettle-desaturated._CB424694257_.svg" alt=""/>
-                        <h2 className="checkout_empty_title">Your Amazon Basket is empty</h2>
+                        <div>
+                            <h2 className="checkout_empty_title">Your Amazon Basket is empty</h2>
+                            <Link to="/">
+                                <button className="checkout_btn_shopping">Continue Shopping</button>
+                            </Link>
+                        </div>
                     </div>
                 ) : (
                     <div>

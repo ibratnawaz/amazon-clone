@@ -7,7 +7,7 @@ import {toast} from 'react-toastify';
 toast.configure() 
 
 const CheckoutProduct = forwardRef(
-    ({id, title, price, rating, image}, ref) => {
+    ({id, title, price, rating, image, hideButton}, ref) => {
 
     const [{ basket }, dispatch] = useStateValue()
     const removeFromBasket=(id)=>{
@@ -37,7 +37,9 @@ const CheckoutProduct = forwardRef(
                         <p>⭐</p>                                     //🌟
                     ))}
                 </div>
-                <button onClick={() => removeFromBasket(id)}>Remove from Basket</button>
+                {!hideButton && (
+                    <button onClick={() => removeFromBasket(id)}>Remove from Basket</button>
+                )}
             </div>
         </div>
     )
